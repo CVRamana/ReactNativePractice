@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import Task1 from './src/Task1';
+import Task2 from './src/Task2';
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => Task1);
+AppRegistry.registerComponent(appName, () => Task2);
