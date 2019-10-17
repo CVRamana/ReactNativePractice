@@ -144,10 +144,11 @@ const styles = StyleSheet.create({
     },
     container1: {
         flex: 1,
-        backgroundColor: "skyblue",
+        backgroundColor: "pink",
         paddingTop: 50,
         paddingLeft: 40,
-        paddingBottom: 30
+        paddingBottom: 30,
+        borderRadius:20
 
     },
     container2: {
