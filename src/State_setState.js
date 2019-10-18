@@ -10,9 +10,11 @@ import {
 export default class ScreenOne extends Component {
 
     state = {
+        id: 0,
         name: '',
         email: '',
         password: '',
+        editIndex: -1,
         empData: []
     }
     // for handling the TextInput
@@ -22,44 +24,72 @@ export default class ScreenOne extends Component {
     }
 
     handleState = () => {
-        let name=this.state.name
-        let email=this.state.email
-        let password=this.state.password
-        if(name=="" || email=="" || password==""){
+        let name = this.state.name
+        let email = this.state.email
+        let password = this.state.password
+        if (name == "" || email == "" || password == "") {
             console.log(alert("Please fill the empty field"))
             return
         }
         let payload = {
-            id:new Date().getUTCMilliseconds(),
+            id: new Date().getTime(),
+            name: name,
+            email: email,
+            password: password
+        };
+
+        let empData = this.state.empData;
+        empData.push(payload);
+        this.setState({
+            empData: empData,
+            name: '',
+            email: '',
+            password: '',
+            id: ""
+        })
+
+    }
+    handleUpdate = () => {
+        let empData = this.state.empData;
+
+        empData[this.state.editIndex] = {
+            id: this.state.id,
             name: this.state.name,
             email: this.state.email,
-            password: this.state.password
-        };
-        
-        let empData = this.state.empData.concat(payload);
-        // empData = empData.concat(payload)
-        this.setState({ empData: empData })
+            password: this.state.password,
+            editIndex: -1,
+        }
+
+        this.setState({
+            id: "",
+            name: "",
+            email: "",
+            password: "",
+            empData: empData
+        })
     }
 
     handleDelete = (id) => {
-        // console.warn(id);
-        let updatedArray = []
-        let temp = this.state.empData
 
-        // console.warn("index",index);
-        // console.warn("updatedArray", this.state.empData);
-
-        let i = 0
-        for (i = 0; i < temp.length - 1; i++) {
-            if (temp[i].id != id) {
-                updatedArray.push(temp[i])
-            }
-
-        }
-        this.setState({ empData: updatedArray })
+        let empData = this.state.empData.filter(item => item.id != id)
+        this.setState({ empData: empData })
     }
+    handleEdit = (item) => {
+        let index = this.state.empData.findIndex(items => items.id == item.id)
+        if (index != -1) {
+            this.setState({
+                id: item.id,
+                name: item.name,
+                email: item.email,
+                password: item.password,
+                editIndex: index
+            })
+        }
+        console.warn("edit index", this.state.editIndex)
 
+    }
     render() {
+        console.warn("rowData", this.state.empData)
         return (
             <ScrollView>
                 <View style={styles.Parentcontainer}>
@@ -96,13 +126,24 @@ export default class ScreenOne extends Component {
                                 }
                             }
                         />
+                        {
+                            this.state.editIndex === -1 ?
+                                < TouchableOpacity
+                                    style={styles.buttton}
+                                    onPress={this.handleState}
+                                >
+                                    <Text style={{ fontSize: 20 }}>Click Me</Text>
+                                </TouchableOpacity>
+                                :
+                                < TouchableOpacity
+                                    style={styles.buttton}
+                                    onPress={this.handleUpdate}
+                                >
+                                    <Text style={{ fontSize: 20 }}>Update</Text>
+                                </TouchableOpacity>
 
-                        < TouchableOpacity
-                            style={styles.buttton}
-                            onPress={this.handleState}
-                        >
-                            <Text style={{ fontSize: 20 }}>Click Me</Text>
-                        </TouchableOpacity>
+                        }
+
                         {/* <Text>{this.state.name}</Text>
                 <Text>{this.state.status}</Text> */}
                     </View>
@@ -113,7 +154,7 @@ export default class ScreenOne extends Component {
                         <FlatList
                             data={this.state.empData}
                             renderItem={(rowData) => {
-                                console.warn("rowData", rowData)
+
                                 return (
                                     <View style={{ backgroundColor: "pink", borderRadius: 20, marginBottom: 10, padding: 20 }}>
                                         <Text>{rowData.item.name}</Text>
@@ -125,6 +166,16 @@ export default class ScreenOne extends Component {
                                         >
                                             <Text style={{ color: "red" }}>Delete</Text>
                                         </TouchableOpacity>
+
+                                        <TouchableOpacity
+                                            style={styles.editButton}
+                                            onPress={() => this.handleEdit(rowData.item)}
+                                        >
+                                            <Text style={{ color: "yellow" }}>Edit</Text>
+                                        </TouchableOpacity>
+
+
+
                                     </View>)
                             }}
                             keyExtractor={(item, index) => index.toString()}
@@ -144,11 +195,11 @@ const styles = StyleSheet.create({
     },
     container1: {
         flex: 1,
-        backgroundColor: "pink",
+        backgroundColor: "powderblue",
         paddingTop: 50,
         paddingLeft: 40,
         paddingBottom: 30,
-        borderRadius:20
+        borderRadius: 20
 
     },
     container2: {
@@ -163,7 +214,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         paddingLeft: 40,
         paddingRight: 40,
-        elevation: 12
+        elevation: 13
 
     },
     textfield: {
@@ -192,7 +243,19 @@ const styles = StyleSheet.create({
         backgroundColor: "orange",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 10
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 10
+
+    },
+    editButton: {
+        width: 50,
+        height: 30,
+        backgroundColor: "green",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 10,
 
     }
+
 })
