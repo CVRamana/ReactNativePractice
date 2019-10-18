@@ -3,8 +3,9 @@ import { AppRegistry } from 'react-native';
 // import Props_State from './src/Props_State';
 // import state_Example from './src/state_Example'
 // import Knowing_JSX from './src/Knowing_JSx'
-import State_setState from './src/State_setState'
+// import State_setState from './src/State_setState'
 //import FlatList_EXample from './src/FlatList_Example'
 // import MyRND from './src/MyRND'
+import Lifecycle from './src/LifeCycle'
 import { name as appName } from './app.json';
-AppRegistry.registerComponent(appName, () => State_setState);
+AppRegistry.registerComponent(appName, () => Lifecycle);
