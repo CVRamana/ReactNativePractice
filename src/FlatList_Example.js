@@ -5,7 +5,7 @@ export default class Flat_ex extends React.Component {
         persons: [
             {
                 name: "Raman"
-            },
+            },  
             {   name: "Aaman"
             },
             {

@@ -18,10 +18,8 @@ export default class App extends Component {
 }
 
 //class Leonard extends Component{
-    
+    //
 //}
-
-
 
 const styles = StyleSheet.create({
     container: {
