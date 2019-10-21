@@ -8,6 +8,7 @@ import { AppRegistry } from 'react-native';
 // import MyRND from './src/MyRND'
 // import Lifecycle from './src/LifeCycle'
  //import Component_State_Prop from './src/Component_State_Prop'
+// import { name as appName } from './app.json';
+import Screen_Assign3 from './src/Screen_Assign3.js';
 import { name as appName } from './app.json';
-import Component_State_Prop from './src/Component_State_Prop.js';
-AppRegistry.registerComponent(appName, () => Component_State_Prop);
+AppRegistry.registerComponent(appName, () => Screen_Assign3);
