@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet,ScrollView } from 'react-native'
 import Child_Img from '../src/Child_Img'
 import Images from '../Constants/Images'
 
 class Screen_Assign_PureComp extends Component {
     render() {
         return (
+            // <View style={{flex:1}}>
+            //     <ScrollView>
             <View style={styles.parent_Conatiner}>
+               {/* <ScrollView> */}
 
                 <View style={styles.conatainer1}>
                     <Child_Img />
@@ -52,7 +55,7 @@ class Screen_Assign_PureComp extends Component {
                                 style={{ width: 29, height: 50 }}
                                 source={Images.BANNER3}
                             />
-                            <View>
+                            <View style={{marginLeft:10}}>
                             <Text>3rd Prize</Text>
                             <Text>$300</Text>
                             </View>
@@ -173,8 +176,10 @@ class Screen_Assign_PureComp extends Component {
 
                     </View>
                 </View>
-
+{/* </ScrollView> */}
             </View>//super
+            // </ScrollView>
+            // </View>
 
         );
     }
@@ -182,14 +187,9 @@ class Screen_Assign_PureComp extends Component {
 export default Screen_Assign_PureComp;
 const styles = StyleSheet.create({
     parent_Conatiner: {
-        flex: 2,
-        // justifyContent:"center",
-        // alignItems:"center",
-        //  backgroundColor: "",
-      //  paddingTop: 30,
-     // marginTop:30
-
-        // paddingBottom: 20
+        flex: 1,
+        
+        
     },
     conatainer1: {
         flex: .3,
