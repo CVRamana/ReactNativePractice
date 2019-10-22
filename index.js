@@ -9,6 +9,7 @@ import { AppRegistry } from 'react-native';
 // import Lifecycle from './src/LifeCycle'
  //import Component_State_Prop from './src/Component_State_Prop'
 // import { name as appName } from './app.json';
-import Screen_Assign3 from './src/Screen_Assign3.js';
+// import Screen_Assign3 from './src/Screen_Assign3.js';
+import Screen_Assign_PureComp from './src/Screen_Assign_PureComp'
 import { name as appName } from './app.json';
-AppRegistry.registerComponent(appName, () => Screen_Assign3);
+AppRegistry.registerComponent(appName, () => Screen_Assign_PureComp);

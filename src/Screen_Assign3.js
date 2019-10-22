@@ -1,5 +1,5 @@
-import React,{ Component } from 'react'
-import { Text, View, Image, Button, FlatList, StyleSheet,ActivityIndicator } from 'react-native'
+import React, { Component } from 'react'
+import { Text, View, Image, Button, FlatList, StyleSheet, ActivityIndicator } from 'react-native'
 const Data = [{
     id: 0,
     path: 'https://facebook.github.io/react/logo-og.png'
@@ -31,13 +31,13 @@ const Data = [{
 {
     id: 4,
     path: 'https://images.pexels.com/photos/3083166/pexels-photo-3083166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-},{
+}, {
     id: 4,
     path: 'https://images.pexels.com/photos/3083166/pexels-photo-3083166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-},{
+}, {
     id: 4,
     path: 'https://images.pexels.com/photos/3083166/pexels-photo-3083166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-},{
+}, {
     id: 4,
     path: 'https://images.pexels.com/photos/3083166/pexels-photo-3083166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 },
@@ -50,20 +50,20 @@ const Data = [{
     path: 'https://images.pexels.com/photos/1128240/pexels-photo-1128240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 },
 {
-    id:7,
-    path:'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+    id: 7,
+    path: 'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 },
 {
-    id:8,
-    path:'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+    id: 8,
+    path: 'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 },
 {
-    id:9,
-    path:'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+    id: 9,
+    path: 'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 },
 {
-    id:10,
-    path:'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+    id: 10,
+    path: 'https://images.pexels.com/photos/1212956/pexels-photo-1212956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 }
 ]
 function Item({ path }) {
@@ -76,58 +76,59 @@ function Item({ path }) {
         </View>
     );
 }
-const col=3;
+const col = 3;
 
 export default class Screen_Assign3 extends React.Component {
 
-    renderHeader(){
+    renderHeader() {
         return (
-            <View style={styles.headerBg}>
-                <Text style={styles.headerText}>List Header</Text>
+                <View style={styles.headerBg}>
+                    <Text style={styles.headerText}>List Header</Text>
             </View>
+
         );
     }
-    
+
     renderFooter = () => {
-       
+
         return (
             <View style={styles.headerBg}>
                 <ActivityIndicator animating size="large" />
             </View>
         );
     };
-    
+
 
     render() {
         return (
-            <View style={{flex:1,alignItems:"center",paddingTop:60}}>
-            <View style={styles.container}>
-                {/* <Text>Hello Everyone!!!!</Text> */}
-                <FlatList
-                    ListHeaderComponent={this.renderHeader}
-                    ListFooterComponent={this.renderFooter}
-                    
-                    data={Data}
-                    numColumns={col}
-                    renderItem={({ item }) => <Item path={item.path} />
-                    }
-                    keyExtractor={item => item.id}
-                />
-            </View>
+            <View style={{ flex: 1, alignItems: "center", paddingTop: 60 }}>
+                <View style={styles.container}>
+                    {/* <Text>Hello Everyone!!!!</Text> */}
+                    <FlatList
+                        ListHeaderComponent={this.renderHeader}
+                        ListFooterComponent={this.renderFooter}
+
+                        data={Data}
+                        numColumns={col}
+                        renderItem={({ item }) => <Item path={item.path} />
+                        }
+                        keyExtractor={item => item.id}
+                    />
+                </View>
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
     container: {
-       
+
 
     },
     item: {
-       
-        marginLeft:10,
-        marginRight:10,
-      
+
+        marginLeft: 10,
+        marginRight: 10,
+
         marginTop: 8,
         marginBottom: 16,
     },
@@ -135,22 +136,26 @@ const styles = StyleSheet.create({
         fontSize: 32,
     },
     img: {
-        height:100,
-        width:100,
-        margin:2,
-        borderRadius:10
+        height: 100,
+        width: 100,
+        margin: 2,
+        borderRadius: 10
     },
     headerBg: {
         flex: 1,
+        flexDirection: "row",
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FF5544',
         height: 50,
-     },
-     headerText: {
+        
+    
+    },
+    headerText: {
         fontFamily: 'Verdana',
         fontSize: 20,
+       
         color: '#FFFFFF',
-     },
+    },
 
 })
