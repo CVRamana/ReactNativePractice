@@ -11,5 +11,6 @@ import { AppRegistry } from 'react-native';
 // import { name as appName } from './app.json';
 // import Screen_Assign3 from './src/Screen_Assign3.js';
 import Screen_Assign_PureComp from './src/Screen_Assign_PureComp'
+import Pure_Normal from './src/Pure_Normal'
 import { name as appName } from './app.json';
-AppRegistry.registerComponent(appName, () => Screen_Assign_PureComp);
+AppRegistry.registerComponent(appName, () => Pure_Normal);
