@@ -12,6 +12,8 @@
 // import Screen_Assign3 from './src/Screen_Assign3.js';
 // import Screen_Assign_PureComp from './src/Screen_Assign_PureComp'
 // import Pure_Normal from './src/Pure_Normal'
-import React_NativeAPI from './src/React_NativeAPI'
+// import React_NativeAPI from './src/React_NativeAPI'
+// import Post_API from './src/Post_API'
+import Screen_Assignment999 from './src/Screen_Assignment999'
 import { name as appName } from './app.json';
-AppRegistry.registerComponent(appName, () => React_NativeAPI);
+AppRegistry.registerComponent(appName, () => Screen_Assignment999);
