@@ -15,9 +15,10 @@
 // import React_NativeAPI from './src/React_NativeAPI'
 // import Post_API from './src/Post_API'
 // import Screen_Assignment999 from './src/Screen_Assignment999'
-import ReacTTest from './src/ReacTTest'
+// import ReacTTest from './src/ReacTTest'
 // import Demo_class_func_component from './src/Demo_class_func_component'
+import ReactFlat11 from './src/ReactFlat11'
 import { name as appName } from './app.json';
 // AppRegistry.registerComponent(appName, () => Screen_Assignment999);
 // AppRegistry.registerComponent(appName,()=>Pure_Normal)
-AppRegistry.registerComponent(appName,()=>ReacTTest)
+AppRegistry.registerComponent(appName,()=>ReactFlat11)
