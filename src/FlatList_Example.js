@@ -28,7 +28,7 @@ export default class Flat_ex extends React.Component {
         return (
             <View style={Styles.container}>
                 <FlatList
-                    keyExtractor={item => {item.name }}
+                    keyExtractor={(item) => {item.name }}
                     data={this.state.persons}
                     renderItem={(item) => {
                         console.log(item)// will the whole info

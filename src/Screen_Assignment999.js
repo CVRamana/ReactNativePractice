@@ -203,6 +203,8 @@ export default class componentName extends Component {
                             flexDirection: "row",
                             marginTop: 35,
                             //padding:10,
+                            marginLeft:15,
+                            marginRight:15,
                             borderRadius: 10
                         }}>
 
@@ -529,7 +531,7 @@ export default class componentName extends Component {
                             </View>
 
                             <View style={{
-                                backgroundColor: "pink",
+                                backgroundCoßlor: "pink",
                                 flex: 1,
                                 margin: 10
                             }}>

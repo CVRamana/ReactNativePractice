@@ -38,8 +38,6 @@ getData=()=>{
         headers:{"Authorization":userToken}
     })
     .then(response=>{
-        
-        
         let src=response.data.data.profile_pic
         //setting the given url
         this.setState({urlImg:src})
@@ -47,9 +45,7 @@ getData=()=>{
         console.warn(response)
         console.warn(src)
     })
-
 }
-
 
   render() {
     return (

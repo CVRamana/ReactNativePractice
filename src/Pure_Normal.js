@@ -38,17 +38,13 @@ this.setState({
          }) }} />
          <Button title="Update Name" onPress={this.onupdateName}/>
          <Button title="Update Age" onpress={this.onupdateAge} />
-        
          < Normal_Comp 
          text={this.state.textinput}
           person={this.state.person} />
          <Pure_Comp 
          text={this.state.textinput}
          person={this.state.person}
-          
           />
-       
-         
      </View>
     );
   }
