@@ -7,13 +7,14 @@ import {
     View
 } from 'react-native'
 
-
 class ReactFlat_input extends Component {
 
     render() {
         return (
             <View style={styles.head}>
-                <TextInput style={styles.input} value={this.props.seachKey} onChangeText={(val)=> this.props.search(val)}/>
+                <TextInput style={styles.input} 
+                value={this.props.seachKey} 
+                onChangeText={(val)=> this.props.search(val)}/>
                 <TouchableOpacity style={styles.bttn}
                     onPress={()=>this.props.handleSearch()}>
                     <Text style={{ fontSize: 40, color: "green" }}>Go</Text>

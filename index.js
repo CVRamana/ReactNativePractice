@@ -12,13 +12,17 @@
 // import Screen_Assign3 from './src/Screen_Assign3.js';
 // import Screen_Assign_PureComp from './src/Screen_Assign_PureComp'
 // import Pure_Normal from './src/Pure_Normal'
-// import React_NativeAPI from './src/React_NativeAPI'
+// import React_NativeAPI from  './src/React_NativeAPI'
 // import Post_API from './src/Post_API'
 // import Screen_Assignment999 from './src/Screen_Assignment999'
 // import ReacTTest from './src/ReacTTest'
 // import Demo_class_func_component from './src/Demo_class_func_component'
 import ReactFlat11 from './src/ReactFlat11'
+// import Image_Picker from './src/Image_Picker'
+import Image_Picker from './src/Image_Picker';
 import { name as appName } from './app.json';
+
 // AppRegistry.registerComponent(appName, () => Screen_Assignment999);
 // AppRegistry.registerComponent(appName,()=>Pure_Normal)
 AppRegistry.registerComponent(appName,()=>ReactFlat11)
+// AppRegistry.registerComponent(appName,()=>Image_Picker)
